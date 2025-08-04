@@ -144,7 +144,7 @@ def student_company_assignment():
     faculty = st.selectbox("Faculty", list(faculty_domains.keys()))
     domain = st.selectbox("Domain", faculty_domains[faculty])
     if st.button("Submit"):
-        df = pd.read_csv('/Users/angeline/Downloads/FYP Code/Streamlit/itp_companies.csv')
+        df = pd.read_csv('itp_companies.csv')
         assignment, fig = assign_student_to_company(student_id, student_lat, student_lon, domain, faculty, df)
         if fig:
             st.dataframe(pd.DataFrame([assignment]))
